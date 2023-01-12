@@ -49,7 +49,7 @@ kubectl apply -n apps -f destination.yaml
 ```
 **Step 9:** Open another terminal and run minikube tunnel
 ```bash
-sudo minikube tunnel
+minikube tunnel
 ``` 
 **Step 10:** Verify  
 Update your `/etc/hosts` file to add a DNS record to resolve `nginx.tmanet.com` to ingress gateway external IP
