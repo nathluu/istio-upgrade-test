@@ -57,3 +57,18 @@ Update your `/etc/hosts` file to add a DNS record to resolve `nginx.tmanet.com` 
 kubectl get services/istio-ingressgateway -n istio-system
 ```
 Access https://nginx.tmanet.com
+
+**Step 11:** Install istio 1.14.3
+```bash
+curl -LO https://github.com/istio/istio/releases/download/1.14.3/istioctl-1.14.3-linux-amd64.tar.gz
+tar -xf istioctl-1.14.3-linux-amd64.tar.gz
+sudo install istioctl /usr/local/bin/
+bash 2-setup-k8s.sh
+```
+
+**Step 12:** Restart nginx pod to load new istio-proxy image
+```bash
+kubectl rollout restart deployment/nginx -n apps
+```
+
+**Step 13:** Access https://nginx.tmanet.com from the browser and got the issue message from istio return
