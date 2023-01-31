@@ -36,6 +36,6 @@ spec:
   http:
   - route:
     - destination:
-        host: nginx
+        host: nginx.apps.svc.cluster.local
         port:
-          number: 443
+          number: 8443
